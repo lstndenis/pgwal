@@ -18,6 +18,7 @@ Master проверяет связь со Slave и Arbiter каждые 5 сек
 
 synchronous_commit = off: потерь данных нет.
 synchronous_commit = remote_apply: потерь данных нет.
+
 Тест №2 (выход из строя Master):
 
 synchronous_commit = off: потеряно 23 записи.
