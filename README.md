@@ -16,13 +16,5 @@ Master проверяет связь с Slave и Arbiter каждые 5 секу
 
 Для тестирования кластера запустите на хосте скрипт: python writer.py
 
-# Тестирование кластера
-Тест №1: выход из строя Slave (в середине теста на хосте скрипт Writer останавливает контейнер с командой docker compose stop pg-slave).
-
-При synchronous_commit = off: потерь нет.
-При synchronous_commit = remote_apply: потерь нет.
-
-Тест №2: выход из строя Master (в середине теста на хосте скрипт Writer останавливает контейнер с командой docker compose stop pg-master).
-
-При synchronous_commit = off: потеряно 24 записи.
-При synchronous_commit = remote_apply: потерь нет.
+# Тесты
+При синхронной репликации - запросы не терялись, при асинхронной потерялись 23 значения.
